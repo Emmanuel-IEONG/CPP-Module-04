@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 10:59:55 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/10 12:03:34 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/10 13:28:03 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 		public:
 			Animal();
 			Animal(Animal const & src);
-			~Animal();
+			virtual ~Animal();
 
 			Animal &	operator=(Animal const & rhs);
 

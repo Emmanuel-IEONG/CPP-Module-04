@@ -6,7 +6,7 @@
 #    By: eieong <eieong@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/10 10:58:54 by eieong            #+#    #+#              #
-#    Updated: 2025/10/10 11:10:25 by eieong           ###   ########.fr        #
+#    Updated: 2025/10/10 13:26:22 by eieong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ SRC = main.cpp \
 		Animal.cpp \
 		Cat.cpp \
 		Dog.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

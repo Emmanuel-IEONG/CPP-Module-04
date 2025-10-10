@@ -6,13 +6,15 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:09:12 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/10 12:04:04 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/10 13:36:55 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 // int	main()
 // {
@@ -28,13 +30,28 @@
 int main()
 {
 	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
+	const Animal* dog = new Dog();
+	const Animal* cat = new Cat();
+	const WrongAnimal* wronga = new WrongAnimal();
+	const WrongAnimal* fakecat = new WrongCat();
+	
+	std::cout << std::endl;
+	std::cout << meta->getType() << ": ";
 	meta->makeSound();
+	std::cout << dog->getType() << ": ";
+	dog->makeSound();
+	std::cout << cat->getType() << ": ";
+	cat->makeSound();
+	std::cout << wronga->getType() << ": ";
+	wronga->makeSound();
+	std::cout << fakecat->getType() << ": ";
+	fakecat->makeSound();
+	std::cout << std::endl;
+	delete meta;
+	delete dog;
+	delete cat;
+	delete wronga;
+	delete fakecat;
 
 	return 0;
 }
