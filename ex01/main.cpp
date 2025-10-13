@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:09:12 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 13:38:45 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/13 13:58:43 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
+void	print_newline()
+{
+	std::cout << std::endl;
+}
+
 int	main()
 {
-	/* TAB TESTS*/
+	std::cout << "/*~~~~~~~~~~~~~~~TAB TESTS~~~~~~~~~~~~~~~*/" << std::endl;
 	int	tab_size = 5;
 	const Animal*	animal[tab_size * 2];
 	for (int i = 0; i < (tab_size * 2); i++)
@@ -27,55 +32,46 @@ int	main()
 		else
 			animal[i] = new Dog();
 	}	
-	std::cout << std::endl;
-	
+	print_newline();
 	for (int i = 0; i < (tab_size * 2); i++)
 	{
 		std::cout << animal[i]->getType() << ": ";
 		animal[i]->makeSound();
 	}
-	std::cout << std::endl;
-	
+	print_newline();
 	for (int i = 0; i < (tab_size * 2); i++)
 		delete animal[i];
-	std::cout << std::endl;
+	print_newline();
 
-	/* COPY TESTS*/
-	const Dog* dog = new Dog();
-
-	std::cout << "Setting new idea" << std::endl;
+	std::cout << "/*~~~~~~~~~~~~~~~COPY TESTS~~~~~~~~~~~~~~~*/" << std::endl;
+	const Dog*	dog = new Dog();
+	print_newline();
+	std::cout << "~Setting new idea~" << std::endl;
 	dog->getBrain()->setIdea("New idea", 5);
-
-	Dog dog2(*dog);
-	
+	print_newline();
+	Dog		dog2(*dog);
+	print_newline();
+	Dog*	dog3 = new Dog(*dog);
+	print_newline();
 	delete dog;
-	std::cout << std::endl;
-	for (int i = -1; i < 10; i++)
-		std::cout << "Copy dog idea: " << dog2.getBrain()->getIdea(i) << std::endl;
-	std::cout << "..." << std::endl;
-
-	// delete cat;
 	
+	print_newline();
+	for (int i = 0; i < 10; i++)
+	{
+		if (!dog2.getBrain()->getIdea(i).empty())
+			std::cout << "Copy dog2 idea: " << dog2.getBrain()->getIdea(i) << std::endl;
+		else
+			break ;
+	}
+	print_newline();
+	for (int i = 0; i < 10; i++)
+	{
+		if (!(*dog3).getBrain()->getIdea(i).empty())
+			std::cout << "Copy dog3 idea: " << (*dog3).getBrain()->getIdea(i) << std::endl;
+		else
+			break ;
+	}
+	print_newline();
+	delete dog3;
 	return (0);
 }
-
-// int main()
-// {
-// 	const Animal* meta = new Animal();
-// 	const Animal* dog = new Dog();
-// 	const Animal* cat = new Cat();
-	
-// 	std::cout << std::endl;
-// 	std::cout << meta->getType() << ": ";
-// 	meta->makeSound();
-// 	std::cout << dog->getType() << ": ";
-// 	dog->makeSound();
-// 	std::cout << cat->getType() << ": ";
-// 	cat->makeSound();
-// 	std::cout << std::endl;
-// 	delete meta;
-// 	delete dog;
-// 	delete cat;	
-
-// 	return 0;
-// }
