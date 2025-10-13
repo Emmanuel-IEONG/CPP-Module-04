@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 13:45:56 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/10 13:53:13 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/13 11:44:07 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,18 @@
 	class	Brain
 	{
 		private:
-			std::string	ideas[100];
+			std::string*	_ideas;
+			int	_size_idea;
 		public:
 			Brain();
 			Brain(Brain const & src);
 			~Brain();
 
 			Brain &	operator=(Brain const & rhs);
+			
+			std::string*	getIdeas() const;
+			std::string		getIdea(int index) const;
+			void			setIdea(std::string idea, int index);
 	};
 
 #endif
