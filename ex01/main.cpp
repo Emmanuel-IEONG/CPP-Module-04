@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:09:12 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 11:04:41 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/13 13:38:45 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 int	main()
 {
+	/* TAB TESTS*/
 	int	tab_size = 5;
 	const Animal*	animal[tab_size * 2];
 	for (int i = 0; i < (tab_size * 2); i++)
@@ -37,7 +38,24 @@ int	main()
 	
 	for (int i = 0; i < (tab_size * 2); i++)
 		delete animal[i];
+	std::cout << std::endl;
 
+	/* COPY TESTS*/
+	const Dog* dog = new Dog();
+
+	std::cout << "Setting new idea" << std::endl;
+	dog->getBrain()->setIdea("New idea", 5);
+
+	Dog dog2(*dog);
+	
+	delete dog;
+	std::cout << std::endl;
+	for (int i = -1; i < 10; i++)
+		std::cout << "Copy dog idea: " << dog2.getBrain()->getIdea(i) << std::endl;
+	std::cout << "..." << std::endl;
+
+	// delete cat;
+	
 	return (0);
 }
 

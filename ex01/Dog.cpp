@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:05:58 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 10:31:04 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/13 13:23:19 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ Dog::Dog() : Animal()
 	this->_brain = new Brain();
 }
 
-Dog::Dog(Dog const & src)
+Dog::Dog(Dog const & src) : Animal()
 {
 	std::cout << "Dog Copy constructor called" << std::endl;
+	this->_brain = new Brain(*(src.getBrain()));
 	*this = src;
 }
 
@@ -44,4 +45,14 @@ Dog &	Dog::operator=(Dog const & rhs)
 void	Dog::makeSound() const
 {
 	std::cout << "BARK BARK" << std::endl;
+}
+
+Brain*	Dog::getBrain() const
+{
+	return (this->_brain);
+}
+
+void	Dog::setBrain(std::string idea, int index)
+{
+	this->_brain->setIdea(idea, index);
 }

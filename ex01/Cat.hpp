@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:06:03 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 10:28:39 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/13 12:54:57 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 			Cat &	operator=(Cat const & rhs);
 
 			void	makeSound() const;
+			Brain*	getBrain() const;
+			void	setBrain(std::string idea, int index);
 	};
 
 #endif
