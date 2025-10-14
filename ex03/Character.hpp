@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:10:51 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/14 12:32:40 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/14 16:22:13 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 	#include "Cure.hpp"
 	#define MAX_MATERIA 4
 
-	class	Character : public ICharacter
+	class	Character : virtual public ICharacter
 	{
 		private:
 			std::string	_name;

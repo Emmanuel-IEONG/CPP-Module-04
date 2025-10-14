@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:10:56 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/14 12:33:05 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/14 16:13:24 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,42 @@ Character &	Character::operator=(Character const & rhs)
 
 std::string const &	Character::getName() const
 {
-	
+	return (this->_name);
 }
 
 void	Character::equip(AMateria* m)
 {
-	
+	for (int i = 0; i < MAX_MATERIA; i++)
+	{
+		if (this->_inventory[i] == NULL)
+		{
+			this->_inventory[i] = m;
+			std::cout << m->getType() << " materia equiped in inventory" << std::endl;
+			return ;
+		}
+	}
+	std::cout << "Inventory full" << std::endl;
 }
 
 void	Character::unequip(int idx)
 {
-	
+	if (idx >= MAX_MATERIA)
+		std::cout << "Error: Invalid index" << std::endl;
+	else if (this->_inventory[idx] != NULL)
+	{
+		std::cout << this->_inventory[idx]->getType() << " materia unequiped" << std::endl;
+		this->_inventory[idx] = NULL;
+	}
+	else
+		std::cout << "No materia equiped at index [" << idx << "]" << std::endl;
 }
 
 void	Character::use(int idx, ICharacter& target)
 {
-	
+	if (idx >= MAX_MATERIA)
+		std::cout << "Error: Invalid index" << std::endl;
+	else if (this->_inventory[idx] != NULL)
+		this->_inventory[idx]->use(target);
+	else
+		std::cout << "No materia equiped at index [" << idx << "]" << std::endl;
 }

@@ -6,7 +6,7 @@
 #    By: eieong <eieong@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 15:13:16 by eieong            #+#    #+#              #
-#    Updated: 2025/10/13 15:15:54 by eieong           ###   ########.fr        #
+#    Updated: 2025/10/14 16:06:05 by eieong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,9 @@ NAME = materia
 
 SRC = main.cpp \
 		AMateria.cpp \
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
 		ICharacter.cpp \
 
 OBJ = $(SRC:.cpp=.o)

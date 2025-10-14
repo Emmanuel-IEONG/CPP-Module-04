@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:23:13 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 15:54:08 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/14 16:20:46 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 	#include <iostream>
 	#include "AMateria.hpp"
 
-	class	Cure : public AMateria
+	class	Cure : virtual public AMateria
 	{
 		private:
 
