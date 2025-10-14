@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:13:19 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 15:34:29 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/14 12:20:43 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 			AMateria();
 			AMateria(AMateria const & src);
 			AMateria(std::string const & type);
-			~AMateria();
+			virtual ~AMateria();
 
 			AMateria &	operator=(AMateria const & rhs);
 
