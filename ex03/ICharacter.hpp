@@ -6,14 +6,15 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:15:36 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 16:04:30 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/14 16:33:32 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 	#define ICHARACTER_HPP
 	#include <iostream>
-	#include "AMateria.hpp"
+
+	class	AMateria;
 
 	class	ICharacter
 	{

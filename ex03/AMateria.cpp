@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:13:20 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 15:35:01 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/14 16:34:39 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,7 @@ std::string const &	AMateria::getType() const
 	return (this->_type);
 }
 
-AMateria*	AMateria::clone() const
-{
-}
-
 void	AMateria::use(ICharacter& target)
 {
+	(void) target;
 }
