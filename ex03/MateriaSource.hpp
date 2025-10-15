@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:58:26 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/14 16:04:19 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/15 11:50:48 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 	#include <iostream>
 	#include "IMateriaSource.hpp"
 	#include "AMateria.hpp"
+	#include "colors.hpp"
 	#define MAX_MATERIA 4
 
-	class	MateriaSource : public IMateriaSource
+	class	MateriaSource : virtual public IMateriaSource
 	{
 		private:
 			AMateria*	_materias[MAX_MATERIA];
@@ -27,7 +28,7 @@
 			~MateriaSource();
 
 			MateriaSource &	operator=(MateriaSource const & rhs);
-			void	learnMateria(AMateria*);
+			void	learnMateria(AMateria* src);
 			AMateria*	createMateria(std::string const & type);
 	};
 

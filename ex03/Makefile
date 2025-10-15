@@ -6,7 +6,7 @@
 #    By: eieong <eieong@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 15:13:16 by eieong            #+#    #+#              #
-#    Updated: 2025/10/14 16:35:15 by eieong           ###   ########.fr        #
+#    Updated: 2025/10/15 11:27:47 by eieong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC = main.cpp \
 		Character.cpp \
 		Cure.cpp \
 		Ice.cpp \
+		MateriaSource.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

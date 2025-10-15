@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:23:13 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/14 16:20:46 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/15 11:50:26 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 	#define CURE_HPP
 	#include <iostream>
 	#include "AMateria.hpp"
-
+	#include "colors.hpp"
+	
 	class	Cure : virtual public AMateria
 	{
 		private:

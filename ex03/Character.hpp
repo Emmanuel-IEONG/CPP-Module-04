@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:10:51 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/14 16:25:45 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/15 11:50:18 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 	#include "AMateria.hpp"
 	#include "Ice.hpp"
 	#include "Cure.hpp"
+	#include "colors.hpp"
 	#define MAX_MATERIA 4
 
 	class	Character : virtual public ICharacter

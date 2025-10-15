@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:13:18 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/14 16:35:51 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/15 12:00:39 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 #include "Cure.hpp"
 #include "Ice.hpp"
 #include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+#include "colors.hpp"
 
 int	main()
 {
@@ -38,12 +41,35 @@ int	main()
 	player->use(2, *target);
 	player->unequip(2);
 	std::cout << std::endl;
-	delete ice1;
-	delete ice2;
-	delete cure1;
-	delete cure2;
 	delete player;
 	delete target;
+	delete cure2;
 
 	return (0);
 }
+
+// int main()
+// {
+// 	IMateriaSource* src = new MateriaSource();
+// 	std::cout << std::endl;
+// 	src->learnMateria(new Ice());
+// 	src->learnMateria(new Cure());
+// 	std::cout << std::endl;
+// 	ICharacter* me = new Character("me");
+// 	AMateria* tmp;
+// 	std::cout << std::endl;
+// 	tmp = src->createMateria("ice");
+// 	me->equip(tmp);
+// 	tmp = src->createMateria("cure");
+// 	me->equip(tmp);
+// 	std::cout << std::endl;
+// 	ICharacter* bob = new Character("bob");
+// 	std::cout << std::endl;
+// 	me->use(0, *bob);
+// 	me->use(1, *bob);
+// 	std::cout << std::endl;
+// 	delete bob;
+// 	delete me;
+// 	delete src;
+// 	return 0;
+// }

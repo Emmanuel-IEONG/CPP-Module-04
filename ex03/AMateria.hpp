@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:13:19 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/14 12:20:43 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/15 11:50:10 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 	#define AMATERIA_HPP
 	#include <iostream>
 	#include "ICharacter.hpp"
+	#include "colors.hpp"
 
 	class	AMateria
 	{
