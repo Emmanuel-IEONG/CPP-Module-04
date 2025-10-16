@@ -6,11 +6,11 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:23:23 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/15 11:55:36 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 15:02:53 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "../include/Ice.hpp"
 
 Ice::Ice() : AMateria()
 {

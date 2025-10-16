@@ -6,11 +6,11 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:13:20 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/15 11:51:39 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 15:02:41 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "../include/AMateria.hpp"
 
 AMateria::AMateria() : _type("Materia")
 {

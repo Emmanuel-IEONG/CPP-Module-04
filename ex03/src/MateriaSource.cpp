@@ -6,11 +6,11 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:58:21 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/15 11:58:05 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 15:03:03 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "../include/MateriaSource.hpp"
 
 MateriaSource::MateriaSource()
 {

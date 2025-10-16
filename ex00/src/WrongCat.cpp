@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 13:20:28 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/16 13:58:47 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 15:15:22 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 WrongCat::WrongCat() : WrongAnimal()
 {
-	std::cout << LBLACK "WrongCat Default constructor called" RESET << std::endl;
+	std::cout << LBLUE "WrongCat Default constructor called" RESET << std::endl;
 	this->_type = "WrongCat";
 }
 
 WrongCat::WrongCat(WrongCat const & src)
 {
-	std::cout << LBLACK "WrongCat Copy constructor called" RESET << std::endl;
+	std::cout << LBLUE "WrongCat Copy constructor called" RESET << std::endl;
 	*this = src;
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << LBLACK "WrongCat Destructor called" RESET << std::endl;
+	std::cout << LBLUE "WrongCat Destructor called" RESET << std::endl;
 }
 
 WrongCat &	WrongCat::operator=(WrongCat const & rhs)
 {
-	std::cout << LBLACK "WrongCat Copy assignment operator called" RESET << std::endl;
+	std::cout << LBLUE "WrongCat Copy assignment operator called" RESET << std::endl;
 
 	if (this != &rhs)
 		this->_type = rhs._type;
@@ -40,5 +40,5 @@ WrongCat &	WrongCat::operator=(WrongCat const & rhs)
 
 void	WrongCat::makeSound() const
 {
-	std::cout << "Meooooow" << std::endl;
+	std::cout << BLUE "Meooooow" RESET << std::endl;
 }

@@ -6,11 +6,11 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:10:56 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/15 11:48:10 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 15:02:46 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "../include/Character.hpp"
 
 Character::Character() : _name("No name")
 {

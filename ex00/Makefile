@@ -6,12 +6,12 @@
 #    By: eieong <eieong@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/10 10:58:54 by eieong            #+#    #+#              #
-#    Updated: 2025/10/16 14:46:54 by eieong           ###   ########.fr        #
+#    Updated: 2025/10/16 15:06:20 by eieong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98 -MD
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MD
 INCLUDE = -I $(HEAD_DIR)
 NAME = animal
 
@@ -34,11 +34,11 @@ DEP = $(OBJ:.o=.d)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 -include $(DEP)
 

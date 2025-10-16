@@ -6,34 +6,44 @@
 #    By: eieong <eieong@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 15:13:16 by eieong            #+#    #+#              #
-#    Updated: 2025/10/15 11:27:47 by eieong           ###   ########.fr        #
+#    Updated: 2025/10/16 15:08:15 by eieong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
-
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MD
+INCLUDE = -I $(HEAD_DIR)
 NAME = materia
 
-SRC = main.cpp \
+SRC_DIR = src/
+OBJ_DIR = obj/
+HEAD_DIR = include/
+
+SRC_FILES = main.cpp \
 		AMateria.cpp \
 		Character.cpp \
 		Cure.cpp \
 		Ice.cpp \
-		MateriaSource.cpp \
+		MateriaSource.cpp
+OBJ_FILES = $(SRC_FILES:.cpp=.o)
 
-OBJ = $(SRC:.cpp=.o)
+SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
+DEP = $(OBJ:.o=.d)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
-%.o: %.cpp
-	@$(CC) $(FLAGS) -c $< -o $@
+$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
+	@mkdir -p $(OBJ_DIR)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
+
+-include $(DEP)
 
 clean:
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@rm -f $(NAME)

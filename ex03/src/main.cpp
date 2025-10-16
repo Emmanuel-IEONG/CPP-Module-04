@@ -6,18 +6,18 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:13:18 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/15 12:00:39 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 15:02:58 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
-#include "Character.hpp"
-#include "Cure.hpp"
-#include "Ice.hpp"
-#include "ICharacter.hpp"
-#include "IMateriaSource.hpp"
-#include "MateriaSource.hpp"
-#include "colors.hpp"
+#include "../include/AMateria.hpp"
+#include "../include/Character.hpp"
+#include "../include/Cure.hpp"
+#include "../include/Ice.hpp"
+#include "../include/ICharacter.hpp"
+#include "../include/IMateriaSource.hpp"
+#include "../include/MateriaSource.hpp"
+#include "../include/colors.hpp"
 
 int	main()
 {

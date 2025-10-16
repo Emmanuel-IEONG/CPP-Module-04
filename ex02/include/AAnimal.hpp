@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/10 13:45:56 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 13:35:15 by eieong           ###   ########.fr       */
+/*   Created: 2025/10/10 10:59:55 by eieong            #+#    #+#             */
+/*   Updated: 2025/10/16 15:20:47 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-	#define BRAIN_HPP
+#ifndef AANIMAL_HPP
+	#define AANIMAL_HPP
+	#include "colors.hpp"
 	#include <iostream>
 
-	#define SIZE_IDEA 100
-	
-	class	Brain
+	class	AAnimal
 	{
-		private:
-			std::string	_ideas[SIZE_IDEA];
+		protected:
+			std::string	_type;
 		public:
-			Brain();
-			Brain(Brain const & src);
-			~Brain();
+			AAnimal();
+			AAnimal(AAnimal const & src);
+			virtual ~AAnimal();
 
-			Brain &	operator=(Brain const & rhs);
-			
-			std::string		getIdea(int index) const;
-			void			setIdea(std::string idea, int index);
+			AAnimal &	operator=(AAnimal const & rhs);
+
+			std::string	getType() const;
+			virtual void	makeSound() const = 0;
 	};
 
 #endif

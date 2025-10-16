@@ -6,33 +6,33 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 13:46:01 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 13:39:24 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 15:10:30 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "../include/Brain.hpp"
 
 Brain::Brain()
 {
-	std::cout << "Brain Default constructor called" << std::endl;
+	std::cout << LMAGENTA "Brain Default constructor called" RESET << std::endl;
 	for (int i = 0; i < SIZE_IDEA; i++)
 		this->_ideas[i] = "No idea";
 }
 
 Brain::Brain(Brain const & src)
 {
-	std::cout << "Brain Copy constructor called" << std::endl;
+	std::cout << LMAGENTA "Brain Copy constructor called" RESET << std::endl;
 	*this = src;
 }
 
 Brain::~Brain()
 {
-	std::cout << "Brain Destructor called" << std::endl;
+	std::cout << LMAGENTA "Brain Destructor called" RESET << std::endl;
 }
 
 Brain &	Brain::operator=(Brain const & rhs)
 {
-	std::cout << "Brain Copy assignment operator called" << std::endl;
+	std::cout << LMAGENTA "Brain Copy assignment operator called" RESET << std::endl;
 
 	if (this != &rhs)
 	{

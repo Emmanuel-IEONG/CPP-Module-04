@@ -6,14 +6,14 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:09:12 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 15:11:05 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 15:16:58 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "Brain.hpp"
+#include "../include/Animal.hpp"
+#include "../include/Cat.hpp"
+#include "../include/Dog.hpp"
+#include "../include/Brain.hpp"
 
 void	print_newline()
 {
@@ -22,9 +22,9 @@ void	print_newline()
 
 int	main()
 {
-	std::cout << "/*~~~~~~~~~~~~~~~TAB TESTS~~~~~~~~~~~~~~~*/" << std::endl;
+	std::cout << GREEN "/*~~~~~~~~~~~~~~~TAB TESTS~~~~~~~~~~~~~~~*/" RESET << std::endl;
 	int	tab_size = 5;
-	const AAnimal*	animal[tab_size * 2];
+	const Animal*	animal[tab_size * 2];
 	for (int i = 0; i < (tab_size * 2); i++)
 	{
 		if (i < tab_size)
@@ -43,7 +43,7 @@ int	main()
 		delete animal[i];
 	print_newline();
 
-	std::cout << "/*~~~~~~~~~~~~~~~COPY TESTS~~~~~~~~~~~~~~~*/" << std::endl;
+	std::cout << GREEN "/*~~~~~~~~~~~~~~~COPY TESTS~~~~~~~~~~~~~~~*/" RESET << std::endl;
 	const Dog*	dog = new Dog();
 	print_newline();
 	std::cout << "~Setting new idea~" << std::endl;

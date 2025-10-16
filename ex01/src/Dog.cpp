@@ -6,35 +6,35 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:05:58 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 13:23:19 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 15:17:28 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "../include/Dog.hpp"
 
 Dog::Dog() : Animal()
 {
-	std::cout << "Dog Default constructor called" << std::endl;
+	std::cout << LRED "Dog Default constructor called" RESET << std::endl;
 	this->_type = "Dog";
 	this->_brain = new Brain();
 }
 
 Dog::Dog(Dog const & src) : Animal()
 {
-	std::cout << "Dog Copy constructor called" << std::endl;
+	std::cout << LRED "Dog Copy constructor called" RESET << std::endl;
 	this->_brain = new Brain(*(src.getBrain()));
 	*this = src;
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog Destructor called" << std::endl;
+	std::cout << LRED "Dog Destructor called" RESET << std::endl;
 	delete this->_brain;
 }
 
 Dog &	Dog::operator=(Dog const & rhs)
 {
-	std::cout << "Dog Copy assignment operator called" << std::endl;
+	std::cout << LRED "Dog Copy assignment operator called" RESET << std::endl;
 
 	if (this != &rhs)
 		this->_type = rhs._type;
@@ -44,7 +44,7 @@ Dog &	Dog::operator=(Dog const & rhs)
 
 void	Dog::makeSound() const
 {
-	std::cout << "BARK BARK" << std::endl;
+	std::cout << RED "BARK BARK" RESET << std::endl;
 }
 
 Brain*	Dog::getBrain() const

@@ -6,12 +6,13 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 13:45:56 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 13:35:15 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 15:21:02 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 	#define BRAIN_HPP
+	#include "colors.hpp"
 	#include <iostream>
 
 	#define SIZE_IDEA 100

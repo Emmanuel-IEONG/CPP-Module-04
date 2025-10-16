@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/10 11:05:58 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/13 15:09:37 by eieong           ###   ########.fr       */
+/*   Created: 2025/10/10 11:05:50 by eieong            #+#    #+#             */
+/*   Updated: 2025/10/16 15:21:52 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "../include/Cat.hpp"
 
-Dog::Dog() : AAnimal()
+Cat::Cat() : AAnimal()
 {
-	std::cout << "Dog Default constructor called" << std::endl;
-	this->_type = "Dog";
+	std::cout << LBLUE "Cat Default constructor called" RESET << std::endl;
+	this->_type = "Cat";
 	this->_brain = new Brain();
 }
 
-Dog::Dog(Dog const & src) : AAnimal()
+Cat::Cat(Cat const & src) : AAnimal()
 {
-	std::cout << "Dog Copy constructor called" << std::endl;
-	this->_brain = new Brain(*(src.getBrain()));
+	std::cout << LBLUE "Cat Copy constructor called" RESET << std::endl;
 	*this = src;
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
-	std::cout << "Dog Destructor called" << std::endl;
+	std::cout << LBLUE "Cat Destructor called" RESET << std::endl;
 	delete this->_brain;
 }
 
-Dog &	Dog::operator=(Dog const & rhs)
+Cat &	Cat::operator=(Cat const & rhs)
 {
-	std::cout << "Dog Copy assignment operator called" << std::endl;
+	std::cout << LBLUE "Cat Copy assignment operator called" RESET << std::endl;
 
 	if (this != &rhs)
 		this->_type = rhs._type;
@@ -42,17 +41,17 @@ Dog &	Dog::operator=(Dog const & rhs)
 	return (*this);
 }
 
-void	Dog::makeSound() const
+void	Cat::makeSound() const
 {
-	std::cout << "BARK BARK" << std::endl;
+	std::cout << BLUE "Meooooow" RESET << std::endl;
 }
 
-Brain*	Dog::getBrain() const
+Brain*	Cat::getBrain() const
 {
 	return (this->_brain);
 }
 
-void	Dog::setBrain(std::string idea, int index)
+void	Cat::setBrain(std::string idea, int index)
 {
 	this->_brain->setIdea(idea, index);
 }
