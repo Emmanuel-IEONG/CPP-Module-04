@@ -6,7 +6,7 @@
 #    By: eieong <eieong@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/10 10:58:54 by eieong            #+#    #+#              #
-#    Updated: 2025/10/16 14:33:11 by eieong           ###   ########.fr        #
+#    Updated: 2025/10/16 14:46:54 by eieong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,7 @@ SRC_FILES = main.cpp \
 		Cat.cpp \
 		Dog.cpp \
 		WrongAnimal.cpp \
-		WrongCat.cpp \
-
+		WrongCat.cpp
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
