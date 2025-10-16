@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 13:20:26 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/10 13:22:18 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 11:06:06 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,26 @@
 
 WrongAnimal::WrongAnimal() : _type("WrongAnimal")
 {
-	std::cout << "WrongAnimal Default constructor called" << std::endl;
+	std::cout << LBLACK "WrongAnimal Default constructor called" RESET << std::endl;
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal const & src)
 {
-	std::cout << "WrongAnimal Copy constructor called" << std::endl;
+	std::cout << LBLACK "WrongAnimal Copy constructor called" RESET << std::endl;
 	*this = src;
 }
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal Destructor called" << std::endl;
+	std::cout << LBLACK "WrongAnimal Destructor called" RESET << std::endl;
 }
 
 WrongAnimal &	WrongAnimal::operator=(WrongAnimal const & rhs)
 {
-	std::cout << "WrongAnimal Copy assignment operator called" << std::endl;
+	std::cout << LBLACK "WrongAnimal Copy assignment operator called" RESET << std::endl;
 
 	if (this != &rhs)
 		this->_type = rhs._type;
-
 	return (*this);
 }
 
@@ -42,7 +41,6 @@ std::string	WrongAnimal::getType() const
 {
 	return (this->_type);
 }
-
 
 void	WrongAnimal::makeSound() const
 {

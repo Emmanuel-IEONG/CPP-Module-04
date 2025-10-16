@@ -6,12 +6,13 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 10:59:55 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/10 13:28:03 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 11:03:55 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 	#define ANIMAL_HPP
+	#include "colors.hpp"
 	#include <iostream>
 
 	class	Animal

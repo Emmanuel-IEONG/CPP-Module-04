@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 13:20:28 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/10 13:24:38 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 11:06:28 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,27 @@
 
 WrongCat::WrongCat() : WrongAnimal()
 {
-	std::cout << "WrongCat Default constructor called" << std::endl;
+	std::cout << LBLACK "WrongCat Default constructor called" RESET << std::endl;
 	this->_type = "WrongCat";
 }
 
 WrongCat::WrongCat(WrongCat const & src)
 {
-	std::cout << "WrongCat Copy constructor called" << std::endl;
+	std::cout << LBLACK "WrongCat Copy constructor called" RESET << std::endl;
 	*this = src;
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat Destructor called" << std::endl;
+	std::cout << LBLACK "WrongCat Destructor called" RESET << std::endl;
 }
 
 WrongCat &	WrongCat::operator=(WrongCat const & rhs)
 {
-	std::cout << "WrongCat Copy assignment operator called" << std::endl;
+	std::cout << LBLACK "WrongCat Copy assignment operator called" RESET << std::endl;
 
 	if (this != &rhs)
 		this->_type = rhs._type;
-
 	return (*this);
 }
 
