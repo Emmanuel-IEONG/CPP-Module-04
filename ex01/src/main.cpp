@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:09:12 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/16 15:16:58 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 16:52:26 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,32 +46,34 @@ int	main()
 	std::cout << GREEN "/*~~~~~~~~~~~~~~~COPY TESTS~~~~~~~~~~~~~~~*/" RESET << std::endl;
 	const Dog*	dog = new Dog();
 	print_newline();
-	std::cout << "~Setting new idea~" << std::endl;
+	std::cout << "~Setting new idea in dog~" << std::endl;
 	dog->getBrain()->setIdea("New idea", 5);
 	print_newline();
-	Dog		dog2(*dog);
+	Dog*	dog2 = new Dog(*dog);
 	print_newline();
-	Dog*	dog3 = new Dog(*dog);
+	Dog		dog3(*dog);
 	print_newline();
 	delete dog;
-	
+	print_newline();
+	std::cout << "~Setting new idea in dog3~" << std::endl;
+	dog3.getBrain()->setIdea("BARK BARK", 4);
 	print_newline();
 	for (int i = 0; i < 10; i++)
 	{
-		if (!dog2.getBrain()->getIdea(i).empty())
-			std::cout << "Copy dog2 idea: " << dog2.getBrain()->getIdea(i) << std::endl;
+		if (!(*dog2).getBrain()->getIdea(i).empty())
+			std::cout << "Copy dog2 idea: " << (*dog2).getBrain()->getIdea(i) << std::endl;
 		else
 			break ;
 	}
 	print_newline();
+	delete dog2;
+	print_newline();
 	for (int i = 0; i < 10; i++)
 	{
-		if (!(*dog3).getBrain()->getIdea(i).empty())
-			std::cout << "Copy dog3 idea: " << (*dog3).getBrain()->getIdea(i) << std::endl;
+		if (!dog3.getBrain()->getIdea(i).empty())
+			std::cout << "Copy dog3 idea: " << dog3.getBrain()->getIdea(i) << std::endl;
 		else
 			break ;
 	}
-	print_newline();
-	delete dog3;
 	return (0);
 }
