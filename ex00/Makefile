@@ -6,34 +6,45 @@
 #    By: eieong <eieong@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/10 10:58:54 by eieong            #+#    #+#              #
-#    Updated: 2025/10/10 13:26:22 by eieong           ###   ########.fr        #
+#    Updated: 2025/10/16 14:33:11 by eieong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
-
+FLAGS = -Wall -Wextra -Werror -std=c++98 -MD
+INCLUDE = -I $(HEAD_DIR)
 NAME = animal
 
-SRC = main.cpp \
+SRC_DIR = src/
+OBJ_DIR = obj/
+HEAD_DIR = include/
+
+SRC_FILES = main.cpp \
 		Animal.cpp \
 		Cat.cpp \
 		Dog.cpp \
 		WrongAnimal.cpp \
 		WrongCat.cpp \
 
-OBJ = $(SRC:.cpp=.o)
+OBJ_FILES = $(SRC_FILES:.cpp=.o)
+
+SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
+DEP = $(OBJ:.o=.d)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $^ -o $@
 
-%.o: %.cpp
-	@$(CC) $(FLAGS) -c $< -o $@
+$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
+
+-include $(DEP)
 
 clean:
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@rm -f $(NAME)

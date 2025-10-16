@@ -6,11 +6,11 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:05:50 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/16 11:04:56 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 13:58:32 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "../include/Cat.hpp"
 
 Cat::Cat() : Animal()
 {

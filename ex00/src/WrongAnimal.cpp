@@ -6,11 +6,11 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 13:20:26 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/16 11:06:06 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 13:58:45 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "../include/WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() : _type("WrongAnimal")
 {

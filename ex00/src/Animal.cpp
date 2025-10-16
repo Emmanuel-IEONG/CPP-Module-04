@@ -6,11 +6,11 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 10:59:49 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/16 11:04:31 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 13:58:28 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../include/Animal.hpp"
 
 Animal::Animal() : _type("Animal")
 {

@@ -6,11 +6,11 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 13:20:28 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/16 11:06:28 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/16 13:58:47 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "../include/WrongCat.hpp"
 
 WrongCat::WrongCat() : WrongAnimal()
 {
