@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:57:10 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/15 10:46:47 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/21 13:01:17 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 	{
 		public:
 			virtual ~IMateriaSource() {}
-			virtual void learnMateria(AMateria* src) = 0;
+			virtual void learnMateria(AMateria*) = 0;
 			virtual AMateria* createMateria(std::string const & type) = 0;
 	};
 
