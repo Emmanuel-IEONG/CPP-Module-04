@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:10:51 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/15 11:50:18 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:38:34 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@
 			void	equip(AMateria* m);
 			void	unequip(int idx);
 			void	use(int idx, ICharacter& target);
+			// AMateria*	getMateria(int idx); // Facilitate the use of "unequip()" but have to change ICharacter...
 	};
 #endif

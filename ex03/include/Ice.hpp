@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:23:28 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/15 11:50:32 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:04:16 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 	class	Ice : virtual public AMateria
 	{
-		private:
-
 		public:
 			Ice();
 			Ice(Ice const & src);

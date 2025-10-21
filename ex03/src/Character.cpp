@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:10:56 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/16 15:02:46 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:47:43 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ Character::Character(std::string name) : _name(name)
 
 Character::~Character()
 {
-	std::cout << "Character Destructor called" << std::endl;
 	for (int i = 0; i < MAX_MATERIA; i++)
 	{
 		if (this->_inventory[i] != NULL)
-			delete this->_inventory[i];
+		delete this->_inventory[i];
 	}
+	std::cout << "Character Destructor called" << std::endl;
 }
 
 Character &	Character::operator=(Character const & rhs)
@@ -58,7 +58,6 @@ Character &	Character::operator=(Character const & rhs)
 			this->_inventory[i] = rhs._inventory[i];
 		}
 	}
-
 	return (*this);
 }
 
@@ -69,37 +68,58 @@ std::string const &	Character::getName() const
 
 void	Character::equip(AMateria* m)
 {
+	if (m == NULL)
+	{
+		std::cout << RED "Error: the materia is NULL, can't be equiped" RESET << std::endl;
+		return ;
+	}
 	for (int i = 0; i < MAX_MATERIA; i++)
 	{
 		if (this->_inventory[i] == NULL)
 		{
 			this->_inventory[i] = m;
-			std::cout << "* " << m->getType() << " materia equiped in inventory *" << std::endl;
+			std::cout << LYELLOW "* " << m->getType() << " materia equiped in inventory *" RESET << std::endl;
 			return ;
 		}
 	}
-	std::cout << "* Inventory full *" << std::endl;
+	std::cout << YELLOW "* Inventory full *" RESET << std::endl;
 }
 
 void	Character::unequip(int idx)
 {
-	if (idx >= MAX_MATERIA)
-		std::cout << "Error: Invalid index" << std::endl;
+	if (idx >= MAX_MATERIA || idx < 0)
+		std::cout << RED "Error: Invalid index" RESET << std::endl;
 	else if (this->_inventory[idx] != NULL)
 	{
-		std::cout << "* " << this->_inventory[idx]->getType() << " materia unequiped *" << std::endl;
+		std::cout << LYELLOW "* " << this->_inventory[idx]->getType() << " materia unequiped *" RESET << std::endl;
 		this->_inventory[idx] = NULL;
 	}
 	else
-		std::cout << "* No materia equiped at index [" << idx << "] *" << std::endl;
+		std::cout << YELLOW "* No materia equiped at index [" << idx << "], can't unequip *" RESET << std::endl;
 }
 
 void	Character::use(int idx, ICharacter& target)
 {
-	if (idx >= MAX_MATERIA)
-		std::cout << "Error: Invalid index" << std::endl;
+	if (idx >= MAX_MATERIA || idx < 0)
+		std::cout << RED "Error: Invalid index" RESET << std::endl;
 	else if (this->_inventory[idx] != NULL)
 		this->_inventory[idx]->use(target);
 	else
-		std::cout << "* No materia equiped at index [" << idx << "] *" << std::endl;
+		std::cout << YELLOW "* No materia equiped at index [" << idx << "], can't be used *" RESET << std::endl;
 }
+
+// AMateria*	Character::getMateria(int idx)
+// {
+// 	if (idx >= MAX_MATERIA || idx < 0)
+// 	{
+// 		std::cout << RED "Error: Invalid index" RESET << std::endl;
+// 		return (NULL);
+// 	}
+// 	else if (this->_inventory[idx] != NULL)
+// 		return (this->_inventory[idx]);
+// 	else
+// 	{
+// 		std::cout << YELLOW "* No materia equiped at index [" << idx << "] *" RESET << std::endl;
+// 		return (NULL);
+// 	}
+// }

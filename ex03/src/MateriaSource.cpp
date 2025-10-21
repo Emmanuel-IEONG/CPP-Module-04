@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:58:21 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/21 13:01:59 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:54:20 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,6 @@ MateriaSource::MateriaSource(MateriaSource const & src)
 MateriaSource::~MateriaSource()
 {
 	std::cout << LMAGENTA "MateriaSource Destructor called" RESET << std::endl;
-	for (int i = 0; i < MAX_MATERIA; i++)
-	{
-		if (this->_materias[i] != NULL)
-			delete this->_materias[i];
-	}
-
 }
 
 MateriaSource &	MateriaSource::operator=(MateriaSource const & rhs)
@@ -51,12 +45,16 @@ MateriaSource &	MateriaSource::operator=(MateriaSource const & rhs)
 			this->_materias[i] = rhs._materias[i];
 		}
 	}
-
 	return (*this);
 }
 
 void	MateriaSource::learnMateria(AMateria* src)
 {
+	if (src == NULL)
+	{
+		std::cout << RED "Error: the materia is NULL, can't be learned" RESET << std::endl;
+		return ;
+	}
 	for (int i = 0; i < MAX_MATERIA; i++)
 	{
 		if (this->_materias[i] == NULL)
@@ -73,7 +71,7 @@ AMateria*	MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < MAX_MATERIA; i++)
 	{
-		if (this->_materias[i]->getType() == type)
+		if (this->_materias[i] && this->_materias[i]->getType() == type)
 		{
 			std::cout << LMAGENTA "* " << type << " materia created from Materia source *" RESET << std::endl;
 			return (this->_materias[i]->clone());
