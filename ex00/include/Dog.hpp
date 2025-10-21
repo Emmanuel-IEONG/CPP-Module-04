@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:06:10 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/10 13:28:13 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/21 14:13:51 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 	class	Dog : public Animal
 	{
-		private:
-
 		public:
 			Dog();
 			Dog(Dog const & src);

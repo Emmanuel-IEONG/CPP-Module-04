@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:06:03 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/10 13:28:10 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/21 14:13:47 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 	class	Cat : public Animal
 	{
-		private:
-
 		public:
 			Cat();
 			Cat(Cat const & src);
