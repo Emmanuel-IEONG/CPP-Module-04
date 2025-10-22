@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:13:18 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/21 16:53:21 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/22 11:54:40 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,15 @@ int main_subject()
 
 int	main()
 {
-	// std::cout << GREEN "/*~~~~~~~~~~~~~~~SUBJECT MAIN~~~~~~~~~~~~~~~*/" RESET << std::endl;
-	// main_subject();
+	std::cout << GREEN "/*~~~~~~~~~~~~~~~SUBJECT MAIN~~~~~~~~~~~~~~~*/" RESET << std::endl;
+	main_subject();
 	std::cout << GREEN "/*~~~~~~~~~~~~~~~OTHER TESTS~~~~~~~~~~~~~~~*/" RESET << std::endl;
 	IMateriaSource*	src = new MateriaSource();
-	AMateria*	ice1 = new Ice();
-	AMateria*	cure1 = new Cure();
 	AMateria*	test_full = new Ice();
-	src->learnMateria(ice1);
-	src->learnMateria(cure1);
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	AMateria*	ice1 = src->createMateria("ice");
+	AMateria*	cure1 = src->createMateria("cure");
 	AMateria*	ice2 = src->createMateria("ice");
 	AMateria*	cure2 = src->createMateria("cure");
 	src->learnMateria(ice2);
@@ -85,10 +85,11 @@ int	main()
 	player->unequip(3);
 	std::cout << std::endl;
 	delete player;
+	std::cout << std::endl;
 	delete target;
-	delete ice2;	//unequiped
-	delete cure2;	//unequiped
+	std::cout << std::endl;
 	delete test_full;
+	std::cout << std::endl;
 	delete src;
 
 	return (0);

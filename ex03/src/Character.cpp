@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:10:56 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/21 16:47:43 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/22 11:46:41 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,12 @@ Character::Character(Character const & src)
 {
 	std::cout << "Character Copy constructor called" << std::endl;
 	for (int i = 0; i < MAX_MATERIA; i++)
-		this->_inventory[i] = src._inventory[i];
+	{
+		if (src._inventory[i] != NULL)
+			this->_inventory[i] = src._inventory[i]->clone();
+		else
+			this->_inventory[i] = NULL;
+	}
 	*this = src;
 }
 
@@ -39,7 +44,7 @@ Character::~Character()
 	for (int i = 0; i < MAX_MATERIA; i++)
 	{
 		if (this->_inventory[i] != NULL)
-		delete this->_inventory[i];
+			delete this->_inventory[i];
 	}
 	std::cout << "Character Destructor called" << std::endl;
 }
@@ -55,7 +60,10 @@ Character &	Character::operator=(Character const & rhs)
 		{
 			if (this->_inventory[i] != NULL)
 				delete this->_inventory[i];
-			this->_inventory[i] = rhs._inventory[i];
+			if (rhs._inventory[i] != NULL)
+				this->_inventory[i] = rhs._inventory[i]->clone();
+			else
+				this->_inventory[i] = NULL;
 		}
 	}
 	return (*this);
@@ -108,18 +116,3 @@ void	Character::use(int idx, ICharacter& target)
 		std::cout << YELLOW "* No materia equiped at index [" << idx << "], can't be used *" RESET << std::endl;
 }
 
-// AMateria*	Character::getMateria(int idx)
-// {
-// 	if (idx >= MAX_MATERIA || idx < 0)
-// 	{
-// 		std::cout << RED "Error: Invalid index" RESET << std::endl;
-// 		return (NULL);
-// 	}
-// 	else if (this->_inventory[idx] != NULL)
-// 		return (this->_inventory[idx]);
-// 	else
-// 	{
-// 		std::cout << YELLOW "* No materia equiped at index [" << idx << "] *" RESET << std::endl;
-// 		return (NULL);
-// 	}
-// }

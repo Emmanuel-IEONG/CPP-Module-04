@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:58:21 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/21 16:54:20 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/22 11:49:33 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,22 @@ MateriaSource::MateriaSource(MateriaSource const & src)
 {
 	std::cout << LMAGENTA "MateriaSource Copy constructor called" RESET << std::endl;
 	for (int i = 0; i < MAX_MATERIA; i++)
-		this->_materias[i] = src._materias[i];
+	{
+		if (src._materias[i] != NULL)
+			this->_materias[i] = src._materias[i]->clone();
+		else
+			this->_materias[i] = NULL;
+	}
 	*this = src;
 }
 
 MateriaSource::~MateriaSource()
 {
+	for (int i = 0; i < MAX_MATERIA; i++)
+	{
+		if (this->_materias[i] != NULL)
+			delete this->_materias[i];
+	}
 	std::cout << LMAGENTA "MateriaSource Destructor called" RESET << std::endl;
 }
 
@@ -42,7 +52,10 @@ MateriaSource &	MateriaSource::operator=(MateriaSource const & rhs)
 		{
 			if (this->_materias[i] != NULL)
 				delete this->_materias[i];
-			this->_materias[i] = rhs._materias[i];
+			if (rhs._materias[i] != NULL)
+				this->_materias[i] = rhs._materias[i]->clone();
+			else
+				this->_materias[i] = NULL;
 		}
 	}
 	return (*this);
