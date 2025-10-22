@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:05:58 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/16 15:22:14 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/22 12:15:21 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ Dog &	Dog::operator=(Dog const & rhs)
 	std::cout << LRED "Dog Copy assignment operator called" RESET << std::endl;
 
 	if (this != &rhs)
+	{
+		delete this->_brain;
+		this->_brain = new Brain(*(rhs.getBrain()));
 		this->_type = rhs._type;
-
+	}
 	return (*this);
 }
 

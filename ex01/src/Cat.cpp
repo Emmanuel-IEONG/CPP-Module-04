@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:05:50 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/16 15:16:28 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/22 12:15:03 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Cat::Cat() : Animal()
 Cat::Cat(Cat const & src) : Animal()
 {
 	std::cout << LBLUE "Cat Copy constructor called" RESET << std::endl;
+	this->_brain = new Brain(*(src.getBrain()));
 	*this = src;
 }
 
@@ -36,8 +37,11 @@ Cat &	Cat::operator=(Cat const & rhs)
 	std::cout << LBLUE "Cat Copy assignment operator called" RESET << std::endl;
 
 	if (this != &rhs)
+	{
+		delete this->_brain;
+		this->_brain = new Brain(*(rhs.getBrain()));
 		this->_type = rhs._type;
-
+	}
 	return (*this);
 }
 

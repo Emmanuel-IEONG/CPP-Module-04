@@ -6,7 +6,7 @@
 /*   By: eieong <eieong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:09:12 by eieong            #+#    #+#             */
-/*   Updated: 2025/10/16 16:52:26 by eieong           ###   ########.fr       */
+/*   Updated: 2025/10/22 12:11:24 by eieong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ int	main()
 	print_newline();
 	Dog		dog3(*dog);
 	print_newline();
+	Dog		dog4;
+	dog4 = *dog;
+	print_newline();
 	delete dog;
 	print_newline();
 	std::cout << "~Setting new idea in dog3~" << std::endl;
@@ -75,5 +78,14 @@ int	main()
 		else
 			break ;
 	}
+	print_newline();
+	for (int i = 0; i < 10; i++)
+	{
+		if (!dog4.getBrain()->getIdea(i).empty())
+			std::cout << "Copy dog4 idea: " << dog4.getBrain()->getIdea(i) << std::endl;
+		else
+			break ;
+	}
+
 	return (0);
 }
